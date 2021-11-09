@@ -1,0 +1,17 @@
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\appsettings.Development.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\appsettings.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.deps.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.runtimeconfig.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.runtimeconfig.dev.json
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.dll
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.csprojAssemblyReference.cache
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.RazorAssemblyInfo.cache
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.RazorAssemblyInfo.cs
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.AssemblyInfoInputs.cache
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.AssemblyInfo.cs
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.RazorTargetAssemblyInfo.cache
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.pdb
+C:\Users\Moohdy\source\repos\Notta\bin\Debug\netcoreapp2.2\Notta.xml
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.dll
+C:\Users\Moohdy\source\repos\Notta\obj\Debug\netcoreapp2.2\Notta.pdb

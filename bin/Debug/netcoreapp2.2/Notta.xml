@@ -1,0 +1,868 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Notta</name>
+    </assembly>
+    <members>
+        <member name="T:Notta.Controllers.AuthController">
+            <summary>
+            authentication controller for the student access authentication
+            </summary>
+        </member>
+        <member name="M:Notta.Controllers.AuthController.#ctor(Notta.Data.IAuthRepository,AutoMapper.IMapper,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            authcontroller constructor
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+            <param name="config"></param>
+        </member>
+        <member name="M:Notta.Controllers.AuthController.Register(Notta.Dto.UserForRegisterDto)">
+            <summary>
+            API endpoint for user registration
+            </summary>
+            <param name="userForRegisterDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.AuthController.Login(Notta.Dto.UserForLoginDto)">
+            <summary>
+            API endpoint for user login
+            </summary>
+            <param name="userForLoginDto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Controllers.CommentsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.#ctor(Notta.Data.ICommentRepository,AutoMapper.IMapper,Notta.Data.IUserRepository,Notta.Data.IPostRepository)">
+            <summary>
+            the courses controller constructor
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+            <param name="Urepo"></param>
+            <param name="Prepo"></param>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.GetComments">
+            <summary>
+            API endpoint for retrieving all the available posts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.GetComment(System.Int32)">
+            <summary>
+            API endpoint for retrieving a particular post 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.GetCommentsInPost(System.Int32)">
+            <summary>
+            API endpoint for retrieving a particular post 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.CreateComment(Notta.Dto.CommentForCreateDto)">
+            <summary>
+            API endpoint for creating a post
+            </summary>
+            <param name="commentForCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.CommentsController.DeleteComment(System.Int32)">
+            <summary>
+            API endpoint for creating a post
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Controllers.PostsController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Controllers.PostsController.#ctor(Notta.Data.IPostRepository,AutoMapper.IMapper,Notta.Data.IUserRepository)">
+            <summary>
+            the courses controller constructor
+            </summary>
+            <param name="repo"></param>
+            <param name="mapper"></param>
+            <param name="Urepo"></param>
+        </member>
+        <member name="M:Notta.Controllers.PostsController.GetPosts">
+            <summary>
+            API endpoint for retrieving all the available posts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.PostsController.GetPost(System.Int32)">
+            <summary>
+            API endpoint for retrieving a particular post 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.PostsController.CreatePost(Notta.Dto.PostForCreateDto)">
+            <summary>
+            API endpoint for creating a post
+            </summary>
+            <param name="postForCreateDto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.PostsController.DeletePost(System.Int32)">
+            <summary>
+            API endpoint for creating a post
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Controllers.UserController">
+            <summary>
+            
+            </summary>
+            
+        </member>
+        <member name="M:Notta.Controllers.UserController.#ctor(Notta.Data.IUserRepository,AutoMapper.IMapper,Notta.Data.ApplicationDbContext)">
+            <summary>
+            user controller constructor
+            </summary>
+        </member>
+        <member name="M:Notta.Controllers.UserController.GetUsers">
+            <summary>
+            API endpoint for retrieving all registered users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Controllers.UserController.GetUser(System.Int32)">
+            <summary>
+            API endpoint for retrieving a particular user
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.ApplicationDbContext">
+            <summary>
+            the context session that interfaces with our database to provide us several operations and functionalities
+            </summary>
+        </member>
+        <member name="M:Notta.Data.ApplicationDbContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{Notta.Data.ApplicationDbContext})">
+            <summary>
+            accessing the instance of the DbContext options
+            </summary>
+        </member>
+        <member name="P:Notta.Data.ApplicationDbContext.Users">
+            <summary>
+            course model entity
+            </summary>
+        </member>
+        <member name="P:Notta.Data.ApplicationDbContext.Posts">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Data.ApplicationDbContext.Comments">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Data.ApplicationDbContext.Likes">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.ApplicationDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:Notta.Data.AuthRepository">
+            <summary>
+            implementing the Repository pattern for AuthController. 
+            </summary>
+        </member>
+        <member name="M:Notta.Data.AuthRepository.#ctor(Notta.Data.ApplicationDbContext)">
+            <summary>
+            AuthRepo constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Notta.Data.AuthRepository.Login(System.String,System.String)">
+            <summary>
+            API endpoint for user login
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.AuthRepository.VerifyPasswordHash(System.String,System.Byte[],System.Byte[])">
+            <summary>
+            verify if user's password matches with whats in the db 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.AuthRepository.Register(Notta.Models.User,System.String)">
+            <summary>
+            API endpoint for user registration
+            </summary>
+            <param name="user"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.AuthRepository.UserExist(System.String)">
+            <summary>
+            API endpoint to verify if a user with a particular email already exist 
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.CommentRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.#ctor(Notta.Data.ApplicationDbContext)">
+            <summary>
+            repo constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.Add``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.Delete``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.GetComments">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.GetCommentsInPost(System.Int32)">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.SaveAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.CommentRepository.GetComment(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.IAuthRepository">
+            <summary>
+            implementing the Repository pattern for AuthController. 
+            </summary>
+        </member>
+        <member name="M:Notta.Data.IAuthRepository.Register(Notta.Models.User,System.String)">
+            <summary>
+            register method for the auth controller
+            </summary>
+            <param name="user"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IAuthRepository.Login(System.String,System.String)">
+            <summary>
+            login method for the auth controller
+            </summary>
+            <param name="email"></param>
+            <param name="password"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IAuthRepository.UserExist(System.String)">
+            <summary>
+            verify user exist method for the auth controller
+            </summary>
+            <param name="email"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.ICommentRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.Add``1(``0)">
+            <summary>
+            for adding a post
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.Delete``1(``0)">
+            <summary>
+            for deleting
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.SaveAll">
+            <summary>
+            for saving changes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.GetComments">
+            <summary>
+            for returning a list of posts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.GetCommentsInPost(System.Int32)">
+            <summary>
+            for returning a list of posts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.ICommentRepository.GetComment(System.Int32)">
+            <summary>
+            for getting a particular post
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.IPostRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.IPostRepository.Add``1(``0)">
+            <summary>
+            for adding a post
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.IPostRepository.Delete``1(``0)">
+            <summary>
+            for deleting
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.IPostRepository.SaveAll">
+            <summary>
+            for saving changes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IPostRepository.GetPosts">
+            <summary>
+            for returning a list of posts
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IPostRepository.GetPost(System.Int32)">
+            <summary>
+            for getting a particular post
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.IUserRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.IUserRepository.Add``1(``0)">
+            <summary>
+            for adding a user
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.IUserRepository.Delete``1(``0)">
+            <summary>
+            for deleting a user
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.IUserRepository.SaveAll">
+            <summary>
+            for saving changes
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IUserRepository.GetUsers">
+            <summary>
+            for returning a list of students
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.IUserRepository.GetUser(System.Int32)">
+            <summary>
+            for getting a particular student
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.PostRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.PostRepository.#ctor(Notta.Data.ApplicationDbContext)">
+            <summary>
+            repo constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Notta.Data.PostRepository.Add``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.PostRepository.Delete``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.PostRepository.GetPosts">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.PostRepository.GetPost(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.PostRepository.SaveAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Data.UserRepository">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Notta.Data.UserRepository.#ctor(Notta.Data.ApplicationDbContext)">
+            <summary>
+            the student controller repo constructor
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:Notta.Data.UserRepository.Add``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.UserRepository.Delete``1(``0)">
+            <summary>
+            
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="entity"></param>
+        </member>
+        <member name="M:Notta.Data.UserRepository.GetUser(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.UserRepository.GetUsers">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Notta.Data.UserRepository.SaveAll">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Notta.Dto.CommentForCreateDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.CommentForCreateDto.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.CommentForCreateDto.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.CommentForCreateDto.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.CommentForCreateDto.Post">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.CommentForCreateDto.PostId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.PostForCreateDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForCreateDto.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForCreateDto.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForCreateDto.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.PostForListDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForListDto.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForListDto.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForListDto.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForListDto.Comments">
+            <summary>
+            a list of courses offered by the user
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.PostForListDto.Likes">
+            <summary>
+            a list of courses offered by the student
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.UserForDetailedDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForDetailedDto.Id">
+            <summary>
+            the primary key of the table
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForDetailedDto.Name">
+            <summary>
+            user's Name
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForDetailedDto.Email">
+            <summary>
+            user's Email address
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForDetailedDto.CreatedAt">
+            <summary>
+            The date the user created his/her account
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForDetailedDto.Posts">
+            <summary>
+            a list of posts created by the user
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.UserForListDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForListDto.Id">
+            <summary>
+            the primary key of the table
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForListDto.Name">
+            <summary>
+            user's Name
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForListDto.Email">
+            <summary>
+            user's Email address
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.UserForLoginDto">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForLoginDto.Email">
+            <summary>
+            maps to the matNo field in the student entity
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForLoginDto.Password">
+            <summary>
+            stores the student's password which is then used in generating the passwordhash field which is then validated against the stored passwordHarsh
+            </summary>
+        </member>
+        <member name="T:Notta.Dto.UserForRegisterDto">
+            <summary>
+            Dto for user registration
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForRegisterDto.Email">
+            <summary>
+            maps to the email field of the user entity
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForRegisterDto.Password">
+            <summary>
+            stores the user's password which is then used in generating the passwordhash field in the user entity
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForRegisterDto.Name">
+            <summary>
+            maps to the Name field of the user entity
+            </summary>
+        </member>
+        <member name="P:Notta.Dto.UserForRegisterDto.CreatedAt">
+            <summary>
+            maps to the dateJoined field of the student entity
+            </summary>
+        </member>
+        <member name="M:Notta.Dto.UserForRegisterDto.#ctor">
+            <summary>
+            class constructor
+            </summary>
+        </member>
+        <member name="T:Notta.Models.Comment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.Post">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Comment.PostId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Models.Like">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Like.LikerId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Like.PostLikedId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Like.Liker">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Like.PostLiked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Models.Post">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.Content">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.Comments">
+            <summary>
+            a list of courses offered by the user
+            </summary>
+        </member>
+        <member name="P:Notta.Models.Post.Likes">
+            <summary>
+            a list of courses offered by the student
+            </summary>
+        </member>
+        <member name="M:Notta.Models.Post.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Models.User">
+            <summary>
+            the student model
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Id">
+            <summary>
+            the primary key of the table
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Name">
+            <summary>
+            user's Name
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Email">
+            <summary>
+            user's Email address
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.PasswordHash">
+            <summary>
+            field for saving the user's password in hashed format
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.PasswordSalt">
+            <summary>
+            the salt key for hashing the password
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.CreatedAt">
+            <summary>
+            The date the student created his/her account
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Posts">
+            <summary>
+            a list of courses offered by the user
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Likes">
+            <summary>
+            a list of courses offered by the user
+            </summary>
+        </member>
+        <member name="P:Notta.Models.User.Comments">
+            <summary>
+            a list of courses offered by the user
+            </summary>
+        </member>
+        <member name="M:Notta.Models.User.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Notta.Startup">
+            <summary>
+            the startup class 
+            </summary>
+        </member>
+        <member name="M:Notta.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            the startup class constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:Notta.Startup.Configuration">
+            <summary>
+            the configuration property
+            </summary>
+        </member>
+        <member name="M:Notta.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            the configuration method for adding services to the project
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:Notta.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
